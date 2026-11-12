@@ -1,0 +1,55 @@
+# Ambientes e dependências
+.venv/
+venv/
+node_modules/
+web/node_modules/
+web/dist/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+
+# Segredos e configuração local
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+
+# Dados locais, bancos e mídia
+*.sqlite*
+*.db
+local-data/
+*.mp4
+*.wav
+*.mkv
+*.webm
+*.mov
+*.avi
+*.mp3
+*.m4a
+
+# Configuração de agentes/IDE e anotações pessoais (não publicar)
+.omp/
+.codex/
+.claude/
+.cursor/
+.playwright-mcp/
+.vscode/
+.idea/
+AGENTS.md
+CLAUDE.md
+Fazer.txt
+PROMPT_GPT6_ASTRA_OMP_EDITOR_IA_VIDEO.md
+docs/superpowers/specs/2026-10-02-playwright-mcp-design.md
+OpenMontage/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+*.log

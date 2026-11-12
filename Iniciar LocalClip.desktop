@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.5
+Type=Application
+Name=Iniciar LocalClip
+GenericName=Editor de Vídeo Local-First
+Comment=Inicia o servidor LocalClip e abre a interface web no navegador
+Exec=python3 -c "import os,sys,urllib.parse; raw=sys.argv[1] if len(sys.argv)>1 and sys.argv[1] and sys.argv[1]!='%%k' else ''; p=urllib.parse.unquote(urllib.parse.urlsplit(raw).path) if raw.startswith('file://') else raw; p=os.path.realpath(p) if p else ''; d=os.path.dirname(p) if p and os.path.isfile(p) else (p if p and os.path.isdir(p) else os.path.abspath('.')); s=os.path.join(d, 'iniciar.sh'); os.chdir(d) if os.path.isdir(d) else None; os.execv('/bin/bash', ['bash', s])" %k
+Icon=video-player
+Terminal=false
+Categories=AudioVideo;Video;AudioVideoEditing;
+StartupNotify=true
+Keywords=video;corte;clip;shorts;tiktok;reels;

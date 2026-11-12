@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.5
+Type=Application
+Name=Parar LocalClip
+GenericName=Finalizar LocalClip
+Comment=Encerra com segurança o servidor LocalClip e seus processos filhos
+Exec=python3 -c "import os,sys,urllib.parse; raw=sys.argv[1] if len(sys.argv)>1 and sys.argv[1] and sys.argv[1]!='%%k' else ''; p=urllib.parse.unquote(urllib.parse.urlsplit(raw).path) if raw.startswith('file://') else raw; p=os.path.realpath(p) if p else ''; d=os.path.dirname(p) if p and os.path.isfile(p) else (p if p and os.path.isdir(p) else os.path.abspath('.')); s=os.path.join(d, 'parar.sh'); os.chdir(d) if os.path.isdir(d) else None; os.execv('/bin/bash', ['bash', s])" %k
+Icon=process-stop
+Terminal=false
+Categories=AudioVideo;Video;AudioVideoEditing;
+StartupNotify=false
+Keywords=video;parar;stop;encerrar;

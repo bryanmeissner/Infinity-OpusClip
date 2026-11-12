@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "localclip"
+version = "0.1.0"
+description = "Local-first video clipping for Linux"
+requires-python = ">=3.12,<3.14"
+dependencies = ["fastapi>=0.115,<1", "uvicorn>=0.34,<1", "python-multipart>=0.0.20", "httpx>=0.28,<1", "pydantic>=2.10,<3", "faster-whisper>=1.1,<2", "av>=14,<19", "opencv-python-headless>=4.10,<5", "numpy>=2,<3", "yt-dlp>=2025.1", "keyring>=25,<26", "secretstorage>=3.3,<4"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10"]
+
+[project.scripts]
+localclip = "localclip.app:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/localclip"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
